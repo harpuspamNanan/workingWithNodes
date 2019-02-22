@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Assignment1_C0732134
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-        }
-    }
-
     class JournalEntry
     {
         public JournalEntry(string note, int dist)
@@ -152,26 +145,22 @@ namespace Assignment1_C0732134
         public int distanceFromPreviousVillage;
         public bool isAstrildgeHere;
     }
+}
 
 
+//    Note: this is the Text that is to be outputted to the Screen at the end of the Program Run:
+//*------------------------------------------------------*
 
 
+//    An Announcement was posted
+//    in "The Viking Village Newspaper", later that week:
 
 
+//    The Familes of Astridle Guðmundsdóttir and Hugi Ólafur
+//    are Happy to announce the Marriage of their Children.
 
-    Note: this is the Text that is to be outputted to the Screen at the end of the Program Run:
-*------------------------------------------------------*
+//    The Ceremony will take place on the third Sunnudagur of Góa
+//    at the Temple of Frigga in Alst.
 
+//    All are Welcome.
 
-    An Announcement was posted
-    in "The Viking Village Newspaper", later that week:
-
-
-    The Familes of Astridle Guðmundsdóttir and Hugi Ólafur
-    are Happy to announce the Marriage of their Children.
-
-    The Ceremony will take place on the third Sunnudagur of Góa
-    at the Temple of Frigga in Alst.
-
-    All are Welcome.
-    }
