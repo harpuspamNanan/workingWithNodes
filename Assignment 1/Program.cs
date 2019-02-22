@@ -8,11 +8,12 @@ namespace Week01_C0732134
             int[] numbers = new int[5];
             Operations o = new Operations();
             o.ToInput(numbers);
-            o.Calculations(numbers);
+            o.GettingMean(numbers);
+            o.CalulateAvg(numbers);
             o.MaxNumber(numbers);
             o.MinNumber(numbers);
             o.GettingMedian(numbers);
-            o.CalculatingStandardDeviation(numbers, 1.0);
+            o.CalculatingStandardDeviation(numbers);
             Console.ReadLine();
         }
     }
@@ -26,17 +27,22 @@ namespace Week01_C0732134
                 numbers[i] = Convert.ToInt32(Console.ReadLine());
         }
 
-        public double Calculations(int[] numbers)
+        public int GettingMean(int[] numbers)
         {
 
             int sum = 0;
-            double avg = 0.0;
             for (int i = 0; i < 5; i++)
             {
                 sum += numbers[i];
             }
-            avg = sum / 5;
+            Console.WriteLine("\nLength of the Given Array is : " + numbers.Length);
             Console.WriteLine("\nThe Sum Of the Array is : " + sum);
+            return sum;
+        }
+
+        public double CalulateAvg(int[] numbers)
+        {
+            double avg = GettingMean(numbers) / numbers.Length;
             Console.WriteLine("\nThe Average Of the Array is : " + avg);
             return avg;
         }
@@ -81,24 +87,28 @@ namespace Week01_C0732134
             Console.WriteLine("\nThe Median Of the Array is: " + median);
         }
 
-        public void CalculatingStandardDeviation(int[] numbers,double FetchAvg)
+        public void CalculatingStandardDeviation(int[] numbers)
         {
-            double GettingDifference=0.0, AddingDifference=0.0,
+            double GettingDifference=0.0,                          //  |x - mu|
+                   AddingDifference=0.0,                        
                    CalculateDeviation = 0.0 ,                     //  E|x - mu| ^ 2          E = Sigma
                    DivideByLength = 0.0,                         // ( E|x - mu| ^ 2 ) / n
-                   StandardDeviation = 0.0;                     // (( E|x - mu| ^ 2 ) / n ) ^ 1/2)
-
+                   StandardDeviation = 0.0,                     // (( E|x - mu| ^ 2 ) / n ) ^ 1/2)
+                   FetchAvg = CalulateAvg(numbers);
             for (int i = 0; i < 5; i++)
             {
-                GettingDifference = (numbers[i] - FetchAvg);
+                GettingDifference = numbers[i] - FetchAvg;
+                       // Console.WriteLine("The "+numbers[i]+" number gets ( "+numbers[i]+" - "+FetchAvg+" : "+GettingDifference );
                 CalculateDeviation = Math.Pow(GettingDifference, 2);
-                AddingDifference += CalculateDeviation; 
+                       // Console.WriteLine("The Square Value is : " + CalculateDeviation);
+                AddingDifference += CalculateDeviation;
+                      //  Console.WriteLine("The Sigma is :" + AddingDifference);
             }
-            Console.WriteLine("\n Till Sigma : " + AddingDifference);
-            DivideByLength = CalculateDeviation / numbers.Length;
-            StandardDeviation = Math.Pow(DivideByLength, 1/2);
-            Console.WriteLine("\nLength: "+numbers.Length);
-            Console.WriteLine("\nThe Standard Deviation Of the Array is : "+ StandardDeviation);
+                      //  Console.WriteLine("\n Till Sigma : " + AddingDifference);
+            DivideByLength = AddingDifference / numbers.Length;
+                      //  Console.WriteLine("\n After Dividing By Length: " + DivideByLength);
+            StandardDeviation = Math.Pow(DivideByLength, 0.5);
+            Console.WriteLine("\nPopulation Standard Deviation Of the Array is : "+ StandardDeviation);   
         }
 
         public void ShowOutput()
