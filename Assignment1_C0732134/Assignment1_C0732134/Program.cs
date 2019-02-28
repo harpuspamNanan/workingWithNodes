@@ -121,7 +121,7 @@ namespace Assignment1_C0732134
             {
                 // Create an instance of StreamReader to read from a file.
                 // The using statement also closes the StreamReader.
-                using (StreamReader sr = new StreamReader("U:\\Users\\732134\\Assignment-1_C0732134\\announcement.txt")) 
+                using (StreamReader sr = new StreamReader("U:\\Users\\732134\\Assignment-1_C0732134\\Assignment-1_C0732134\\announcement.txt")) 
                 {
                     string line;
 
