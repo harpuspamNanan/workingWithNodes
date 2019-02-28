@@ -32,7 +32,7 @@ namespace Assignment1_C0732134
 
         public static int CalculateDistanceWalked()
         {
-            int DistanceWalked = 0;
+            int DistanceWalked = 0; 
             // walk over the List and add the distances
             foreach (var je in HugiJournal)
             {
