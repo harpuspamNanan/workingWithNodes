@@ -49,6 +49,7 @@ namespace Assignment1_C0732134
         {
             CountrySide a = new CountrySide();
             a.Run();
+            Console.ReadLine();
         }
 
         // Create the LinkedList to reflect the Map in the PowerPoint Instructions
@@ -62,29 +63,37 @@ namespace Assignment1_C0732134
 
         public void TraverseVillages(Village CurrentVillage)
         {
-            if (Hugi.FoundAstrilde) return;
 
-            // Here Hugi records his travels, as any Norse Hero will do:
-            Hugi.HugiJournal.Add(new JournalEntry(CurrentVillage.VillageName, CurrentVillage.distanceFromPreviousVillage));
-
-            Console.WriteLine("I am in {0}", CurrentVillage.VillageName);
-
-            if (CurrentVillage.isAstrildgeHere)
+            try
             {
-                Console.WriteLine("I found Dear Astrildge in {0}", CurrentVillage.VillageName);
-                Console.WriteLine("**** FEELING HAPPY!!! ******");
-                Console.WriteLine("Astrilde, I walked {0} vika to find you. Will you marry me?", Hugi.CalculateDistanceWalked());
-                Hugi.FoundAstrilde = true;
+                if (Hugi.FoundAstrilde) return;
+
+                // Here Hugi records his travels, as any Norse Hero will do:
+                Hugi.HugiJournal.Add(new JournalEntry(CurrentVillage.VillageName, CurrentVillage.distanceFromPreviousVillage));
+
+                Console.WriteLine("I am in {0}", CurrentVillage.VillageName);
+
+                if (CurrentVillage.isAstrildgeHere)
+                {
+                    Console.WriteLine("I found Dear Astrildge in {0}", CurrentVillage.VillageName);
+                    Console.WriteLine("**** FEELING HAPPY!!! ******");
+                    Console.WriteLine("Astrilde, I walked {0} vika to find you. Will you marry me?", Hugi.CalculateDistanceWalked());
+                    Hugi.FoundAstrilde = true;
+                }
+
+                // TO DO: Complete this section to make the Recursion work           
+                TraverseVillages(CurrentVillage.west);
+                TraverseVillages(CurrentVillage.east);
             }
-
-            // TO DO: Complete this section to make the Recursion work           
-
-
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public void Run()
         {
-            Alst = new Village("Alst", false);
+            Alst = new Village("Alst", false);                                   // Make a Constructor for Village class and enter the data: VilaageName and bool value for isAstrildeHere
             Schvenig = new Village("Schvenig", false);
             Wessig = new Village("Wessig", false);
             // TO DO: Complete this section
