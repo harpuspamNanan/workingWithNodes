@@ -97,20 +97,24 @@ namespace Assignment1_C0732134
             Schvenig = new Village("Schvenig", false);
             Wessig = new Village("Wessig", false);
             // TO DO: Complete this section
+            Uster = new Village("Uster", true);
+            Badden = new Village("Badden", false);
             Maeland = new Village("Maeland", false);
             Helmholtz = new Village("Helmholtz", false);
-            Uster = new Village("Uster", true);
-            Badden = new Village("Badden", false); 
-
+           
+            
             Alst.VillageSetup(0, Schvenig, Wessig);                                 // Make Setup for the Villages with the VillageSetup Constructor
             Schvenig.VillageSetup(14, Maeland, Helmholtz);                          // The fisrt Value marks the distance of the Current village from the Previous Village in INTEGER format
             // TO DO: Complete this section                                            The Second Value gives the reference of the West (child) Village and, if not present, we have just marked them null 
-            Wessig.VillageSetup(19, null, null);                                     // The Third Value  gives the reference of nthe East (child) Village and, here also we mark null if there is no child Village
-            Maeland.VillageSetup(9, null, null);
-            Helmholtz.VillageSetup(28, null, null);
+            Wessig.VillageSetup(19, Uster, Badden);                                     // The Third Value  gives the reference of nthe East (child) Village and, here also we mark null if there is no child Village
             Uster.VillageSetup(28, null, null);
             Badden.VillageSetup(11, null, null);
+            Maeland.VillageSetup(9, null, null);
+            Helmholtz.VillageSetup(28, null, null);
 
+
+            this.TraverseVillages(Alst);
+            this.Announcement();
         }
 
         public void Announcement()
