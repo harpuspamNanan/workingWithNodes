@@ -89,6 +89,10 @@ namespace Assignment1_C0732134
             Wessig = new Village("Wessig", false);
             // TO DO: Complete this section
             Maeland = new Village("Maeland", false);
+            Helmholtz = new Village("Helmholtz", false);
+            Uster = new Village("Uster", true);
+            Badden = new Village("Badden", false);
+
             Alst.VillageSetup(0, Schvenig, Wessig);
             Schvenig.VillageSetup(14, Maeland, Helmholtz);
             // TO DO: Complete this section
