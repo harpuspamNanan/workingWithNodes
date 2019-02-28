@@ -85,10 +85,8 @@ namespace Assignment1_C0732134
                 TraverseVillages(CurrentVillage.west);
                 TraverseVillages(CurrentVillage.east);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            catch (NullReferenceException){ }
+            
         }
 
         public void Run()
@@ -167,11 +165,3 @@ namespace Assignment1_C0732134
         public bool isAstrildgeHere;
     }
 }
-
-
-//    Note: this is the Text that is to be outputted to the Screen at the end of the Program Run:
-//*------------------------------------------------------*
-
-
-
-
