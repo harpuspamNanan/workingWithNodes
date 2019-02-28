@@ -94,11 +94,11 @@ namespace Assignment1_C0732134
             Badden = new Village("Badden", false);
 
 
-            Alst.VillageSetup(0, Schvenig, Wessig);
-            Schvenig.VillageSetup(14, Maeland, Helmholtz);
-            // TO DO: Complete this section
-            Wessig.VillageSetup(9, null, null);
-
+            Alst.VillageSetup(0, Schvenig, Wessig);                                 // Make Setup for the Villages with the VillageSetup Constructor
+            Schvenig.VillageSetup(14, Maeland, Helmholtz);                          // The fisrt Value marks the distance of the Current village from the Previous Village in INTEGER format
+            // TO DO: Complete this section                                            The Second Value gives the reference of the West (child) Village and, if not present, we have just marked them null 
+            Wessig.VillageSetup(9, null, null);                                     // The Third Value  gives the reference of nthe East (child) Village and, here also we mark null if there is no child Village
+            Helmholtz.VillageSetup(28, null, null);
 
 
         }
