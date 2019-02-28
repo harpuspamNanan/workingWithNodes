@@ -99,6 +99,7 @@ namespace Assignment1_C0732134
             Wessig.VillageSetup(19, null, null);                                     // The Third Value  gives the reference of nthe East (child) Village and, here also we mark null if there is no child Village
             Maeland.VillageSetup(9, null, null);
             Helmholtz.VillageSetup(28, null, null);
+            Uster.VillageSetup(28, null, null);
             Badden.VillageSetup(11, null, null);
 
         }
