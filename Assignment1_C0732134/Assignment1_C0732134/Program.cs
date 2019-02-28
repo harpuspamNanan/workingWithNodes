@@ -123,7 +123,7 @@ namespace Assignment1_C0732134
             {
                 // Create an instance of StreamReader to read from a file.
                 // The using statement also closes the StreamReader.
-                using (StreamReader sr = new StreamReader("c:/area51/annoucement.txt"))
+                using (StreamReader sr = new StreamReader("U:\\Users\\732134\\Assignment-1_C0732134\\announcement.txt")) 
                 {
                     string line;
 
@@ -173,15 +173,5 @@ namespace Assignment1_C0732134
 //*------------------------------------------------------*
 
 
-//    An Announcement was posted
-//    in "The Viking Village Newspaper", later that week:
 
-
-//    The Familes of Astridle Guðmundsdóttir and Hugi Ólafur
-//    are Happy to announce the Marriage of their Children.
-
-//    The Ceremony will take place on the third Sunnudagur of Góa
-//    at the Temple of Frigga in Alst.
-
-//    All are Welcome.
 
